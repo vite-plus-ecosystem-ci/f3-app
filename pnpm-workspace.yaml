@@ -2,9 +2,8 @@ packages:
   - apps/*
   - packages/*
 catalog:
-  vite: npm:@voidzero-dev/vite-plus-core@0.2.2
-  vitest: npm:@voidzero-dev/vite-plus-test@0.1.24
-  vite-plus: 0.2.2
+  vite: npm:@voidzero-dev/vite-plus-core@0.0.0-commit.9855245a469b178066c25a5d45c971c130565d89
+  vite-plus: 0.0.0-commit.9855245a469b178066c25a5d45c971c130565d89
 overrides:
   vite: 'catalog:'
   vitest: 'catalog:'
