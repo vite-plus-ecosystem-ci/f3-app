@@ -32,10 +32,24 @@
     "tsx": "^4.22.3",
     "turbo": "^2.9.14",
     "typescript": "^6.0.3",
+    "vite": "catalog:",
     "vite-plus": "catalog:"
   },
   "engines": {
     "node": ">=24.0.0"
   },
-  "packageManager": "pnpm@10.5.2"
+  "packageManager": "pnpm@10.5.2",
+  "pnpm": {
+    "overrides": {
+      "vite": "npm:@voidzero-dev/vite-plus-core@0.0.0-commit.8b23a00f98df4a9270ac87a4f80b2ce1b669040b"
+    },
+    "peerDependencyRules": {
+      "allowAny": [
+        "vite"
+      ],
+      "allowedVersions": {
+        "vite": "*"
+      }
+    }
+  }
 }
