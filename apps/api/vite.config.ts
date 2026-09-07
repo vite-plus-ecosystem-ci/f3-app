@@ -9,7 +9,7 @@ export default defineConfig({
     unbundle: true,
     target: 'node12',
     sourcemap: false,
-    skipNodeModulesBundle: true,
+    deps: { neverBundle: true, resolveDepSubpath: true },
     outExtensions(context) {
       if (context.format === 'cjs') {
         return {
