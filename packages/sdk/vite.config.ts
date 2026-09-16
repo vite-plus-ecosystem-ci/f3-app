@@ -1,7 +1,9 @@
 import { defineConfig } from 'vite-plus'
 
 export default defineConfig({
+  test: { clearMocks: false },
   pack: {
+    deps: { resolveDepSubpath: true },
     entry: './src/index.ts',
     outDir: './dist',
     format: ['es', 'cjs'],

@@ -30,6 +30,7 @@ const stripMissingLibsqlOptionalNativeDeps = (result: TraceResult) => {
 }
 
 export default defineConfig({
+  test: { clearMocks: false },
   resolve: {
     tsconfigPaths: true,
   },
