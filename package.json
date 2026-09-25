@@ -37,5 +37,18 @@
   "engines": {
     "node": ">=24.0.0"
   },
-  "packageManager": "pnpm@10.5.2"
+  "packageManager": "pnpm@10.5.2",
+  "pnpm": {
+    "overrides": {
+      "vite@*": "npm:@voidzero-dev/vite-plus-core@0.0.0-commit.73ce44ef507f7c2aed23bc5addd747d0e3d0b33a"
+    },
+    "peerDependencyRules": {
+      "allowAny": [
+        "vite"
+      ],
+      "allowedVersions": {
+        "vite": "*"
+      }
+    }
+  }
 }
