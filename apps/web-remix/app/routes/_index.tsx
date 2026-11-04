@@ -3,7 +3,7 @@ import { prisma } from 'db'
 import { Welcome } from '../welcome/welcome'
 import type { Route } from './+types/_index'
 
-export function meta(_: Route.MetaArgs) {
+export function meta() {
   return [{ title: 'fisand-remix' }, { name: 'description', content: 'Welcome to fisand remix!' }]
 }
 

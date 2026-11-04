@@ -3,8 +3,7 @@ import { Input } from '@repo/ui/src/components/ui/input'
 import { ShimmerButton } from '@repo/ui/src/components/ui/shimmer-button'
 import { createFileRoute, Link, useRouter } from '@tanstack/react-router'
 import { createServerFn } from '@tanstack/react-start'
-import { db, user } from 'drizzle'
-import { eq } from 'drizzle-orm'
+import { db, eq, user } from 'drizzle'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
 import { toast } from 'sonner'
@@ -17,13 +16,13 @@ const getCount = createServerFn({
 })
 
 const updateCount = createServerFn({ method: 'POST' })
-  .inputValidator((data: { email: string; name: string }) => data)
+  .validator((data: { email: string; name: string }) => data)
   .handler(async ({ data }) => {
     await db.insert(user).values(data)
   })
 
 const deleteCount = createServerFn({ method: 'POST' })
-  .inputValidator((data: { id: number }) => data)
+  .validator((data: { id: number }) => data)
   .handler(async ({ data }) => {
     await db.delete(user).where(eq(user.id, data.id))
   })

@@ -9,6 +9,7 @@ import * as dotenv from 'dotenv'
 import fastify from 'fastify'
 
 import { createContext } from './context'
+import { mcpPlugin } from './mcp'
 import type { AppRouter } from './router'
 import { appRouter } from './router'
 import { router } from './router/orpc'
@@ -20,7 +21,9 @@ const handler = new RPCHandler(router, {
 })
 
 const server = fastify({
-  maxParamLength: 5000,
+  routerOptions: {
+    maxParamLength: 5000,
+  },
   logger: true,
   serverFactory: (fastifyHandler) => {
     const server = createServer(async (req, res) => {
@@ -51,6 +54,8 @@ server.register(fastifyTRPCPlugin, {
     },
   } satisfies FastifyTRPCPluginOptions<AppRouter>['trpcOptions'],
 })
+
+server.register(mcpPlugin)
 
 void (async () => {
   try {

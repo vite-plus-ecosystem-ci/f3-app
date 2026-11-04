@@ -19,8 +19,8 @@
   },
   "dependencies": {
     "@bprogress/react": "^1.2.7",
-    "@orpc/client": "^1.14.3",
-    "@orpc/tanstack-query": "^1.14.3",
+    "@orpc/client": "^1.16.1",
+    "@orpc/tanstack-query": "^1.16.1",
     "@repo/ui": "workspace:*",
     "@vitejs/plugin-react": "^6.0.2",
     "drizzle": "workspace:*",

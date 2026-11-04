@@ -11,17 +11,24 @@
     "dev": "tsx watch ./src/index.ts",
     "lint": "vp lint src",
     "preview": "node ./dist/index.cjs",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vp test --run"
   },
   "dependencies": {
-    "@orpc/server": "^1.14.3",
+    "@modelcontextprotocol/fastify": "^2.0.1",
+    "@modelcontextprotocol/node": "^2.1.2",
+    "@modelcontextprotocol/server": "^2.4.0",
+    "@orpc/server": "^1.16.1",
     "@repo/sdk": "workspace:*",
-    "@typeschema/valibot": "^0.14.0",
+    "@trpc/server": "^11.17.0",
+    "consola": "^3.4.2",
     "db": "workspace:*",
     "dotenv": "^17.4.2",
-    "fastify": "^5.8.5"
+    "fastify": "^5.12.8",
+    "valibot": "^1.5.0"
   },
   "devDependencies": {
-    "@repo/typescript-config": "workspace:*"
+    "@modelcontextprotocol/client": "^2.4.0",
+    "@repo/typescript-config": "workspace:*",
+    "vite-plus": "catalog:"
   }
 }

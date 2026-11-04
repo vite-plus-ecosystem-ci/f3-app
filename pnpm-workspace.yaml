@@ -2,12 +2,44 @@ packages:
   - apps/*
   - packages/*
 catalog:
-  vite: npm:@voidzero-dev/vite-plus-core@1.1.0
-  vite-plus: 1.1.0
+  vite: npm:@voidzero-dev/vite-plus-core@1.5.0
+  vite-plus: 1.5.0
 overrides:
   vite@*: 'catalog:'
   '@types/react': 19.2.15
   '@types/react-dom': 19.2.3
+  # Security fixes for transitive dependencies, without crossing version lines.
+  '@babel/core@^7.0.0': ^7.29.6
+  '@xmldom/xmldom@^0.8.0': ^0.8.15
+  '@xmldom/xmldom@^0.9.0': ^0.9.12
+  'axios@^1.0.0': ^1.20.0
+  'baseline-browser-mapping@^2.0.0': ^2.11.0
+  'body-parser@^1.0.0': ^1.20.9
+  'brace-expansion@^2.0.0': ^2.1.7
+  'brace-expansion@^5.0.0': ^5.0.12
+  'browserslist@^4.0.0': ^4.28.7
+  'compression@^1.0.0': ^1.8.2
+  'esbuild@^0.28.0': ^0.28.1
+  'fast-uri@^3.0.0': ^3.1.9
+  'follow-redirects@^1.0.0': ^1.16.2
+  'form-data@^4.0.0': ^4.0.6
+  'h3@^1.0.0': ^1.15.9
+  'hono@^4.0.0': ^4.13.11
+  'js-yaml@^4.0.0': ^4.3.2
+  'morgan@^1.0.0': ^1.12.1
+  'nanoid@^3.0.0': ^3.3.18
+  'node-forge@^1.0.0': ^1.4.1
+  'postcss@^8.0.0': ^8.5.23
+  'proxy-addr@^2.0.0': ^2.0.8
+  'qs@^6.0.0': ^6.16.1
+  'seroval@^1.0.0': ^1.6.10
+  'shell-quote@^1.0.0': ^1.9.0
+  'socket.io-parser@^4.0.0': ^4.2.7
+  'source-map-js@^1.0.0': ^1.2.2
+  'ua-parser-js@^2.0.0': ^2.0.10
+  'ws@^7.0.0': ^7.5.11
+  'ws@^8.0.0': ^8.21.0
+  'zod@^4.0.0': ^4.6.6
 peerDependencyRules:
   allowAny:
     - vite

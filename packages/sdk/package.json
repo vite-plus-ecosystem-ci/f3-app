@@ -22,7 +22,7 @@
   "scripts": {
     "build": "vp pack",
     "dev": "vp pack --w --no-clean",
-    "postinstall": "pnpm run build",
+    "postinstall": "vp run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {

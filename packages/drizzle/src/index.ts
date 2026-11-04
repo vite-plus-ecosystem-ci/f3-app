@@ -6,5 +6,6 @@ const db = drizzle(process.env.DB_FILE_NAME!)
 
 export { db }
 
+export { eq } from 'drizzle-orm'
 export * from './db/relations'
 export * from './db/schema'

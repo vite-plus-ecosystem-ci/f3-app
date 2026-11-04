@@ -1,5 +1,4 @@
 import { initTRPC } from '@trpc/server'
-import { wrap } from '@typeschema/valibot'
 import { prisma } from 'db'
 import * as v from 'valibot'
 
@@ -17,17 +16,15 @@ export const appRouter = t.router({
   getUsers: t.procedure.query(async () => {
     return await prisma.user.findMany()
   }),
-  getUserById: t.procedure.input(wrap(v.string())).query((opts) => {
+  getUserById: t.procedure.input(v.string()).query((opts) => {
     return users[opts.input] // input type is string
   }),
   createUser: t.procedure
     .input(
-      wrap(
-        v.object({
-          name: v.pipe(v.string(), v.minLength(3)),
-          bio: v.pipe(v.string(), v.maxLength(142)),
-        }),
-      ),
+      v.object({
+        name: v.pipe(v.string(), v.minLength(3)),
+        bio: v.pipe(v.string(), v.maxLength(142)),
+      }),
     )
     .mutation((opts) => {
       const id = Date.now().toString()
